@@ -2,5 +2,8 @@ build/
 log/
 install/
 
+# Python Cache
+**/__pycache__
+
 # VS Code Configurations
 .vscode/

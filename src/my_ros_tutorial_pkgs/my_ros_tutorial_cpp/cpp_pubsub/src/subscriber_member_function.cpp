@@ -24,7 +24,7 @@ class MinimalSubscriber : public rclcpp::Node
 {
 public:
   MinimalSubscriber()
-  : Node("minimal_subscriber")
+  : Node("minimal_subscriber") // give name to Node class constructor
   {
     subscription_ = this->create_subscription<std_msgs::msg::String>(
       "topic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));

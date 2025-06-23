@@ -1,4 +1,6 @@
 build/
 log/
 install/
+
+# VS Code Configurations
 .vscode/

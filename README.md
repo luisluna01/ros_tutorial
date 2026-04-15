@@ -1,11 +1,16 @@
 # ROS 2 Humble — Tutorials Repository
 
-Personal repository for working through the official [ROS 2 Humble Tutorials](https://docs.ros.org/en/humble/Tutorials.html). Includes custom packages in both C++ and Python covering the core ROS 2 concepts.
+Personal repository for working through the official
+[ROS 2 Humble Tutorials](https://docs.ros.org/en/humble/Tutorials.html). Includes custom packages in
+both C++ and Python covering the core ROS 2 concepts.
 
 ## Requirements
 
-- **With Docker** — See the [`docker_ros`](https://github.com/luisluna01/docker_ros) submodule for setup instructions. Only supports machines with an Nvidia GPU.
-- **Without Docker** — Install [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) on Ubuntu 22.04.
+- **With Docker** — See the [`docker_ros`](https://github.com/luisluna01/docker_ros) submodule for
+    setup instructions. Only supports machines with an Nvidia GPU.
+- **Without Docker** — Install
+    [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) on
+    Ubuntu 22.04.
 
 ## Setup
 
@@ -17,7 +22,9 @@ cd ros_tutorials
 
 ## Docker
 
-This project can run with or without a docker container. The `docker_ros` submodule provides a ready-to-use ROS 2 Humble container. See the `docker_ros` [README.md](docker_ros/README.md) for full instructions.
+This project can run with or without a docker container. The `docker_ros` submodule provides a
+ready-to-use ROS 2 Humble container. See the `docker_ros` [README.md](docker_ros/README.md) for full
+instructions.
 
 To launch a container and enter a shell:
 ```bash

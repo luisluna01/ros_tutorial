@@ -1,9 +1,9 @@
-[submodule "docker_ros2"]
-	path = docker_ros2
-	url = git@github.com:luisluna01/docker_ros2.git
 [submodule "src/beginner_ros_tutorials/examples"]
 	path = src/beginner_ros_tutorials/examples
 	url = https://github.com/ros2/examples
 [submodule "src/beginner_ros_tutorials/ros_tutorials"]
 	path = src/beginner_ros_tutorials/ros_tutorials
 	url = https://github.com/ros/ros_tutorials.git
+[submodule "docker_ros"]
+	path = docker_ros
+	url = git@github.com:luisluna01/docker_ros.git

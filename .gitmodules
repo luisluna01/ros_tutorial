@@ -1,3 +1,0 @@
-[submodule "docker_ros"]
-	path = docker_ros
-	url = git@github.com:luisluna01/docker_ros.git

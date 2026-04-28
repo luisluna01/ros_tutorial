@@ -6,6 +6,7 @@ from action_tutorials_interfaces.action import Fibonacci
 
 
 class FibonacciActionClient(Node):
+
     def __init__(self):
         super().__init__('fibonacci_action_client')
         self._action_client = ActionClient(self, Fibonacci, 'fibonacci') # Use /fibonacci action
@@ -55,7 +56,7 @@ class FibonacciActionClient(Node):
         
         self.get_logger().info(f'Result: {result.sequence}')
 
-        rclpy.shutdown() # Shutdown ROS2 for a clean exit
+        rclpy.shutdown() # Shutdown ROS2 communication for a clean exit
     
 
     def feedback_callback(self, feedback_msg):

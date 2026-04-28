@@ -13,16 +13,17 @@ public:
   explicit FibonacciActionServer(const rclcpp::NodeOptions& options = rclcpp::NodeOptions())
   : Node("fibonacci_action_server", options)
   {
-    using namespace std::placeholders;
-
     // Create action server of Fibonacci type using "/fibonacci" action with 3 callback methods
     // - Note: Callback methods need to return quickly
     this->action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
       "fibonacci",
-      std::bind(&FibonacciActionServer::handle_goal, this, _1, _2),
-      std::bind(&FibonacciActionServer::handle_cancel, this, _1),
-      std::bind(&FibonacciActionServer::handle_accepted, this, _1)
+      [this](const rclcpp_action::GoalUUID& uuid, std::shared_ptr<const Fibonacci::Goal> goal)
+        {return this->handle_goal(uuid, goal);},
+      [this](const std::shared_ptr<GoalHandleFibonacci> goal_handle)
+        {return this->handle_cancel(goal_handle);},
+      [this](const std::shared_ptr<GoalHandleFibonacci> goal_handle)
+        {this->handle_accepted(goal_handle);}
     );
   }
 
@@ -43,7 +44,7 @@ private:
   rclcpp_action::CancelResponse handle_cancel(
     const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
-    RCLCPP_INFO(this->get_logger(), "Recieved request to cancel goal");
+    RCLCPP_INFO(this->get_logger(), "Received request to cancel goal");
     (void)goal_handle; // Suppress unused warning
 
     return rclcpp_action::CancelResponse::ACCEPT;
@@ -52,11 +53,12 @@ private:
   // Accepts and processes a new goal
   void handle_accepted(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
-    using namespace std::placeholders;
-
     // Spins up a new thread to return quickly and avoid blocking executer. Execution process occurs
     // in new thread using execute() method
-    std::thread{std::bind(&FibonacciActionServer::execute, this, _1), goal_handle}.detach();
+    std::thread{
+      [this, goal_handle]()
+        {this->execute(goal_handle);}
+    }.detach();
   }
 
   // Processes one sequence number of the Fibonacci sequence every second publishing a feedback

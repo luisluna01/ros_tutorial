@@ -15,7 +15,17 @@ add_executable(fibonacci_action_server
   src/fibonacci_action_server.cpp
 )
 
+add_executable(fibonacci_action_client
+  src/fibonacci_action_client.cpp
+)
+
 ament_target_dependencies(fibonacci_action_server
+  rclcpp
+  rclcpp_action
+  action_tutorials_interfaces
+)
+
+ament_target_dependencies(fibonacci_action_client
   rclcpp
   rclcpp_action
   action_tutorials_interfaces
@@ -23,6 +33,7 @@ ament_target_dependencies(fibonacci_action_server
 
 install(TARGETS
   fibonacci_action_server
+  fibonacci_action_client
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -3,7 +3,7 @@
 <package format="3">
   <name>py_launch_tutorial</name>
   <version>0.0.0</version>
-  <description>Python launch tutorial</description>
+  <description>Python launch tutorial package</description>
   <maintainer email="luisluna12@utexas.edu">Luis Luna</maintainer>
   <license>Apache-2.0</license>
 

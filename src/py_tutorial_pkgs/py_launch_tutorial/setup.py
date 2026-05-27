@@ -16,9 +16,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='nrg-neutron',
+    maintainer='Luis Luna',
     maintainer_email='luisluna12@utexas.edu',
-    description='TODO: Package description',
+    description='Python launch tutorial package',
     license='Apache-2.0',
     extras_require={
         'test': [

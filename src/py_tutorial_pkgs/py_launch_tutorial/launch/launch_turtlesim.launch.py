@@ -14,6 +14,9 @@ def generate_launch_description():
             PathJoinSubstitution([launch_dir, 'turtlesim_world_2.launch.py'])
         ),
         IncludeLaunchDescription(
+            PathJoinSubstitution([launch_dir, 'turtlesim_world_3.launch.py'])
+        ),
+        IncludeLaunchDescription(
             PathJoinSubstitution([launch_dir, 'broadcaster_listener.launch.py']),
             launch_arguments={'target_frame': 'carrot1'}.items()
         ),

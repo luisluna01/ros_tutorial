@@ -13,7 +13,7 @@ def generate_launch_description():
             name='sim',
             parameters=[
                 PathJoinSubstitution([
-                    FindPackageShare('launch_tutorial'), 'config', 'turtlesim.yaml']),
+                    FindPackageShare('py_launch_tutorial'), 'config', 'turtlesim.yaml']),
             ],
         ),
     ])

@@ -23,6 +23,7 @@ def generate_launch_description():
         ),
         IncludeLaunchDescription(
             PathJoinSubstitution([launch_dir, 'broadcaster_listener.launch.py']),
+            # Parameter override
             launch_arguments={'target_frame': 'carrot1'}.items()
         ),
         IncludeLaunchDescription(

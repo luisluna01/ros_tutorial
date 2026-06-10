@@ -1,11 +1,12 @@
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, GroupAction
+from launch_ros.actions import PushRosNamespace
 from launch.substitutions import PathJoinSubstitution
-from launch_ros.substitutions import FindPackageShare, PushRosNamespace
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    launch_dir = PathJoinSubstitution([FindPackageShare('launch_tutorial'), 'launch'])
+    launch_dir = PathJoinSubstitution([FindPackageShare('py_launch_tutorial'), 'launch'])
     return LaunchDescription([
         IncludeLaunchDescription(
             PathJoinSubstitution([launch_dir, 'turtlesim_world_1.launch.py'])
@@ -15,7 +16,7 @@ def generate_launch_description():
                 # Ensure every node, including nested nodes, inherit 'turtlesim2' namespace
                 PushRosNamespace('turtlesim2'),
                 IncludeLaunchDescription(
-                    PathJoinSubstitution([launch_dir, 'turtlesim_world_2_launch.py'])),
+                    PathJoinSubstitution([launch_dir, 'turtlesim_world_2.launch.py'])),
             ]
         ),
         IncludeLaunchDescription(

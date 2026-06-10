@@ -6,7 +6,10 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    launch_dir = PathJoinSubstitution([FindPackageShare('py_launch_tutorial'), 'launch'])
+    launch_dir = PathJoinSubstitution([
+        FindPackageShare('py_launch_tutorial'), 'launch', 'managing_larger_projects'
+    ])
+
     return LaunchDescription([
         IncludeLaunchDescription(
             PathJoinSubstitution([launch_dir, 'turtlesim_world_1.launch.py'])

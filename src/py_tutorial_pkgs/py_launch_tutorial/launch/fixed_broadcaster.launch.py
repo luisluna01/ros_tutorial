@@ -1,16 +1,14 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import EnvironmentVariable, LaunchConfiguration
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 
-# Environment variable 'USER' used to define namespaces or distinguishing nodes for different
-# computers or robots
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'node_prefix',
-            default_value=[EnvironmentVariable('USER'), '_'],
+            default_value='user_',
             description='prefix for node name'
         ),
         Node(

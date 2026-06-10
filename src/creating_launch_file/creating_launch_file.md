@@ -5,7 +5,7 @@ tutorial.
 
 In order to use the launch file, first navigate to this directory:
 ```bash
-cd ../ros_tutorials/src/launch_tutorial/creating_launch_file/
+cd ../ros_tutorials/src/creating_launch_file/
 ```
 
 Then run the following command:

@@ -13,6 +13,21 @@ find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(turtlesim REQUIRED)
 
+# create executable
+add_executable(static_turtle_tf2_broadcaster src/static_turtle_tf2_broadcaster.cpp)
+
+ament_target_dependencies(static_turtle_tf2_broadcaster
+  rclcpp
+  tf2
+  tf2_ros
+  geometry_msgs
+)
+
+install(TARGETS
+  static_turtle_tf2_broadcaster
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

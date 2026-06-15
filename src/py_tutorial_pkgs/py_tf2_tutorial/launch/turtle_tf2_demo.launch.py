@@ -1,7 +1,7 @@
 from launch import LaunchDescription
 
 from launch.actions import DeclareLaunchArgument
-from launch.substitution import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 
@@ -25,7 +25,7 @@ def generate_launch_description():
             ]
         ),
         Node(
-            pacakge='py_tf2_tutorial',
+            package='py_tf2_tutorial',
             executable='turtle_tf2_broadcaster',
             name='broadcaster2',
             parameters=[
@@ -33,8 +33,8 @@ def generate_launch_description():
             ]
         ),
         Node(
-            pacakge='py_tf2_tutorial',
-            executable='turtl2_tf2_listener',
+            package='py_tf2_tutorial',
+            executable='turtle_tf2_listener',
             name='listener',
             parameters=[
                 {'target_frame': LaunchConfiguration('target_frame')}

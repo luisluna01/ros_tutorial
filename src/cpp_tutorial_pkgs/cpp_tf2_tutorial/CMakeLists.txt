@@ -17,13 +17,13 @@ find_package(turtlesim REQUIRED)
 add_executable(static_turtle_tf2_broadcaster src/static_turtle_tf2_broadcaster.cpp)
 add_executable(turtle_tf2_broadcaster src/turtle_tf2_broadcaster.cpp)
 
+# add target dependencies for each executable
 ament_target_dependencies(static_turtle_tf2_broadcaster
   rclcpp
   tf2
   tf2_ros
   geometry_msgs
 )
-
 ament_target_dependencies(turtle_tf2_broadcaster
   rclcpp
   tf2
@@ -32,10 +32,16 @@ ament_target_dependencies(turtle_tf2_broadcaster
   turtlesim
 )
 
+# install executables
 install(TARGETS
   static_turtle_tf2_broadcaster
   turtle_tf2_broadcaster
   DESTINATION lib/${PROJECT_NAME}
+)
+
+# install launch directory
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'static_turtle_tf2_broadcaster = py_tf2_tutorial.static_turtle_tf2_broadcaster:main'
+            'static_turtle_tf2_broadcaster = py_tf2_tutorial.static_turtle_tf2_broadcaster:main',
+            'turtle_tf2_broadcaster = py_tf2_tutorial.turtle_tf2_broadcaster:main'
         ],
     },
 )

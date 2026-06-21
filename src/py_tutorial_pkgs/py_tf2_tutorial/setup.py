@@ -30,7 +30,8 @@ setup(
         'console_scripts': [
             'static_turtle_tf2_broadcaster = py_tf2_tutorial.static_turtle_tf2_broadcaster:main',
             'turtle_tf2_broadcaster = py_tf2_tutorial.turtle_tf2_broadcaster:main',
-            'turtle_tf2_listener = py_tf2_tutorial.turtle_tf2_listener:main'
+            'turtle_tf2_listener = py_tf2_tutorial.turtle_tf2_listener:main',
+            'fixed_frame_tf2_broadcaster = py_tf2_tutorial.fixed_frame_tf2_broadcaster:main'
         ],
     },
 )
